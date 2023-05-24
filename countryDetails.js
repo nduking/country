@@ -2011,7 +2011,7 @@ const countries = [
     currency: "Botswana pula",
   },
 ];
-
+let row=document.getElementById("row")
 const cardContainer = document.getElementById("card-container");
 
 countries.forEach((country) => {
@@ -2043,22 +2043,21 @@ countries.forEach((country) => {
   currency.classList.add("card__currency");
   currency.textContent = country.currency;
 
-  cardContainer.appendChild(card);
-
   cardContainer.appendChild(capital);
   capital.innerHTML = "<strong>Capital:</strong>" + " " + country.capital;
 
-  cardContainer.appendChild(language);
+  // cardContainer.appendChild(language);
   language.innerHTML =
     "<strong>Languages:</strong>" + " " + country.languages.join(", ");
 
-  cardContainer.appendChild(currency);
+  // cardContainer.appendChild(currency);
   currency.innerHTML = "<strong>Currency:</strong>" + " " + country.currency;
 
-  cardContainer.appendChild(population);
+  // cardContainer.appendChild(population);
   population.innerHTML =
     "<strong>Population:</strong>" + " " + country.population.toLocaleString();
 
-  card.append(name, flag, capital, language, currency, population);
+  // card.append(name, flag, capital, language, currency, population);
   cardContainer.appendChild(card);
+    row.append(cardContainer)
 });
